@@ -1,0 +1,239 @@
+@use 'variaveis';
+
+body {
+    background-color: #000; 
+    color: #fff; 
+    margin: 0; 
+    font-family: variaveis.$font-stack; 
+}
+
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-image: url(../images/cover-desktop@1x-7e66501a.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+
+        &__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 1;
+        }
+
+        &__content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        &__title {
+            font-size: 3rem;
+            color: variaveis.$text-color;
+            margin-bottom: 20px;
+            font-family: variaveis.$font-stack;
+        }
+
+        &__description {
+            font-size: 1.5rem;
+            color: variaveis.$text-color-second;
+            margin-bottom: 30px;
+            font-family: variaveis.$font-stack;
+        }
+
+        &__button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: variaveis.$text-color;
+            background-color: variaveis.$primary-color;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+
+            &:hover {
+            background-color: darken(variaveis.$primary-color, 10%);
+            }
+}
+}
+
+
+.curiosities {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+  
+        &__content {
+        max-width: 800px;
+        margin: 0 auto;
+        }
+  
+        &__title {
+        font-size: 2.5rem;
+        color: #333; 
+        margin-bottom: 20px;
+        }
+    
+        &__description {
+        font-size: 1.2rem;
+        color: #666;
+        line-height: 1.6;
+        }
+  }
+
+
+.movies {
+    text-align: center;
+    padding: 40px 20px;
+  
+        &__title {
+        font-size: 2.5rem;
+        color: variaveis.$text-color;
+        margin-bottom: 30px;
+        }
+    
+        &__container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; 
+        flex-wrap: wrap; 
+        }
+    
+        &__card {
+            background-color: #c6bc3ae7; 
+            color: variaveis.$text-color-second; 
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+  
+        &__card-image {
+        width: 100%;
+        height: auto; 
+        border-radius: 5px; 
+        margin-bottom: 15px;
+        }
+    
+        &__card-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        }
+    
+        &__card-description {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        }
+    
+        &__card-button {
+        display: inline-block;
+        padding: 10px 15px;
+        font-size: 1rem;
+        color: #c72c41;
+        background-color: variaveis.$text-color-second; 
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    
+        &:hover {
+            background-color: #f0f0f0; 
+        }
+        }
+  }
+
+
+.trailers {
+    text-align: center;
+    padding: 40px 20px;
+  
+        &__title {
+        font-size: 2.5rem;
+        color: variaveis.$text-color; 
+        margin-bottom: 30px;
+        }
+    
+        &__container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; 
+        flex-wrap: wrap; 
+        }
+    
+        &__video {
+        width: 30%; 
+        margin: 20px; 
+        border-radius: 8px; 
+        overflow: hidden; 
+    
+        iframe {
+            border: none; 
+        }
+        }
+  }
+
+
+.footer {
+    background-color: #333; 
+    color: variaveis.$text-color-second; 
+    text-align: center; 
+    padding: 20px 0; 
+    position: relative;
+    bottom: 0; 
+    width: 100%; 
+  
+    &__container {
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 20px; 
+    }
+  
+    &__text {
+      margin: 5px 0; 
+      font-size: 1rem; 
+    }
+  }
+
+ 
+@media (max-width: 768px) {
+    .trailers__title {
+      font-size: 2rem; 
+    }
+  
+    .trailers__video {
+      width: 45%; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .trailers__title {
+      font-size: 1.5rem; 
+    }
+  
+    .trailers__video {
+      width: 100%; 
+      margin: 10px 0; 
+    }
+  
+    .footer__text {
+      font-size: 0.9rem; 
+    }
+  }
